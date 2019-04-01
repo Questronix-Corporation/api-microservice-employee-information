@@ -4,7 +4,6 @@ const TAG     = '[EmployeeInformationController]';
 const rekuire = require('rekuire');
 const Logger  = rekuire('Logger');
 const Errors  = rekuire('Errors');
-// const EmployeeInformation   = rekuire('EmployeeInformation');
 const EmployeeInformationMySQL = rekuire('EmployeeInformationMySQL');
 
 function EmployeeInformationController(req, res) {
