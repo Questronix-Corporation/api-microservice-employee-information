@@ -10,7 +10,7 @@ var EmployeeInformationMySQL = rekuire('EmployeeInformationMySQL');
 var express_configuration = require("./express-configuration");
 express_configuration.init(app, express);
 
-app.use('/v1/employee/information', require('./routes/employeeinformation'));
+app.use('/v1/employee/information', require('./routes/employeeInformation'));
 
 if(process.env.SKIP_QNX_MYSQL != 'true') {
   Logger.log('info', '[EmployeeInformationMySQLDB] Connecting to database');
