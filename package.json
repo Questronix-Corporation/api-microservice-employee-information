@@ -1,0 +1,29 @@
+{
+  "name": "api-microservice-employee-information",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "cycle": "^1.0.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "rekuire": "^0.1.9",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Questronix-Corporation/api-microservice-employee-information.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Questronix-Corporation/api-microservice-employee-information/issues"
+  },
+  "homepage": "https://github.com/Questronix-Corporation/api-microservice-employee-information#readme"
+}
