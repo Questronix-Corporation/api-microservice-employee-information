@@ -1,4 +1,4 @@
-const TAG        = '[employeeinformation]';
+const TAG        = '[employeeInformation]';
 const express    = require('express');
 const rekuire    = require('rekuire');
 const async      = require('async');
