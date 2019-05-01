@@ -43,63 +43,7 @@ module.exports = {
           code: -6,
           message: 'Unauthorized Access.'
         }
-      },
-      INVALID_DARK_KNIGHT_CREDENTIALS: {
-        status: 403,
-        error: {
-          code: -7,
-          message: 'Participant ID or Account Key is incorrect.'
-        }          
-      },
-      INVALID_DARK_KNIGHT_AMOUNT: {
-        status: 403,
-        error: {
-          code: -8,
-          message: 'Amount is invalid.'
-        }          
-      },
-      DARK_KNIGHT_TRANSACTION_NOT_FOUND: {
-        status: 404,
-        error: {
-          code: -9,
-          message: 'Dark Knight Transaction not found.'
-        }
-      },
-      DARK_KNIGHT_PARTICIPANT_NOT_FOUND: {
-        status: 404,
-        error: {
-          code: -10,
-          message: 'Dark Knight Participant not found.'
-        }
-      },
-      DARK_KNIGHT_PARTICIPANT_MEMBER_NOT_FOUND: {
-        status: 404,
-        error: {
-          code: -11,
-          message: 'Dark Knight Participant Member not found.'
-        }
-      },
-      DARK_KNIGHT_PERMISSION_NOT_FOUND: {
-        status: 404,
-        error: {
-          code: -12,
-          message: 'Dark Knight Permission not found.'
-        }
-      },
-      PLAY_CONVERGENTID_TAKEN: {
-        status: 404,
-        error: {
-            code: -13,
-            message: 'ConvergentId already taken. Try to use another one.'
-        }                
-      },
-      PLAY_CONVERGENTID_NOT_FOUND: {
-        status: 404,
-        error: {
-            code: -14,
-            message: 'ConvergentId not found.'
-        }                
-      },
+      }
     };
     return errors[tag];
   },

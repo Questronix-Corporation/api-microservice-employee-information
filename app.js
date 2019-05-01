@@ -22,7 +22,7 @@ if(process.env.SKIP_QNX_MYSQL != 'true') {
   });  
 }
 
-let port = process.env.PORT || 8080;
+let port = process.env.PORT || 8085;
 app.listen(port, function () {
 	Logger.log('info', '[App] Now up and running', {port: port});
 });
