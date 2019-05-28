@@ -14,10 +14,10 @@ router.post('/register', function(req, res, next){
 
     var _employeeInformation = new EmployeeInformationController(req);
     async.auto({
-        addEmployee:      _employeeInformation.addEmployee.bind(_employeeInformation),
+        addCompanyInfo:      _employeeInformation.addCompanyInfo.bind(_employeeInformation),
     }, function(err, result) {
         if(err) return res.error(err);
-        else return res.ok(result.addEmployee);
+        else return res.ok(result.addCompanyInfo);
     });
 });
 
