@@ -10,7 +10,7 @@ var EmployeeInformationMySQL = rekuire('EmployeeInformationMySQL');
 var express_configuration = require("./express-configuration");
 express_configuration.init(app, express);
 
-app.use('/v1/employee/information', require('./routes/employeeInformation'));
+app.use('/v1/eims', require('./routes/employeeInformation'));
 
 if(process.env.SKIP_QNX_MYSQL != 'true') {
   Logger.log('info', '[EmployeeInformationMySQLDB] Connecting to database');
@@ -22,7 +22,7 @@ if(process.env.SKIP_QNX_MYSQL != 'true') {
   });  
 }
 
-let port = process.env.PORT || 8085;
+let port = process.env.PORT || 8086;
 app.listen(port, function () {
 	Logger.log('info', '[App] Now up and running', {port: port});
 });

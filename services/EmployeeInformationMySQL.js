@@ -4,11 +4,11 @@ const mysql = require('mysql');
 
 /* for localhost mysql database */
 const config = {
-    host:       process.env.QNX_MYSQL_HOST || '<mysql-host>',
-    user:       process.env.QNX_MYSQL_USER || '<mysql-user>',
-    password:   process.env.QNX_MYSQL_PASS || '<mysql-pass>',
-    name:       process.env.QNX_MYSQL_NAME || '<mysql-name>',
-    port:       process.env.QNX_MYSQL_PORT || '<mysql-port>'
+    host:       process.env.EI_MYSQL_HOST || '<mysql-host>',
+    user:       process.env.EI_MYSQL_USER || '<mysql-user>',
+    password:   process.env.EI_MYSQL_PASS || '<mysql-pass>',
+    name:       process.env.EI_MYSQL_NAME || '<mysql-name>',
+    port:       process.env.EI_MYSQL_PORT || '<mysql-port>'
 };
 
 const state = {
