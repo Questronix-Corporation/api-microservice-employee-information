@@ -15,10 +15,11 @@ router.post('/employees/company/info', function(req, res, next){
     var _employeeInformation = new EmployeeInformationController(req);
     async.auto({
         chkEmployeeNo:      _employeeInformation.chkEmployeeNo.bind(_employeeInformation),
-        addCompanyInfo:      ['chkEmployeeNo', _employeeInformation.addCompanyInfo.bind(_employeeInformation)]
+        chkDept:          ['chkEmployeeNo', _employeeInformation.chkDept.bind(_employeeInformation)]
+        // addCompanyInfo:      ['chkEmployeeNo', 'chkDeptId', _employeeInformation.addCompanyInfo.bind(_employeeInformation)]
     }, function(err, result) {
         if(err) return res.error(err);
-        else return res.ok(result.addCompanyInfo);
+        else return res.ok(result.chkDept);
     });
 });
 

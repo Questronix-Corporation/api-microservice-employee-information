@@ -134,6 +134,20 @@ module.exports = {
             code: -19, 
             message: 'Employee already had legal info.'
           } 
+        },
+        INVALID_DEPT_ID: { 
+          status: 400, 
+          error: { 
+            code: -20, 
+            message: 'Invalid Department ID.'
+          } 
+        },
+        INVALID_SECTION: { 
+          status: 400, 
+          error: { 
+            code: -21, 
+            message: 'Invalid Section.'
+          } 
         }
       };
       return errors[tag];

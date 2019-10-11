@@ -14,6 +14,18 @@ exports.chkEmployeeNo = (data) => {
     });
 };
 
+//Select department id
+exports.chkDept = (data) => {
+    return new Promise((resolve, reject)=>{
+        mysql.execute('SELECT * FROM departments WHERE id = ?', data)
+        .then((data)=>{
+            resolve(data);
+        }).catch((error)=>{
+            reject(error);
+        });
+    });
+};
+
 //Add company info
 exports.addCompanyInfo = (data) => {
     return new Promise((resolve, reject)=>{

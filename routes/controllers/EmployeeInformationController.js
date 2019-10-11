@@ -6,6 +6,7 @@ const Logger  = rekuire('Logger');
 const Errors  = rekuire('Errors');
 const Moment  = rekuire('moment');
 const async   = require('async');
+const Utility = rekuire('Utility');
 
 const employee_information_model = rekuire('employeeinformation');
 
@@ -39,11 +40,47 @@ EmployeeInformationController.prototype.chkEmployeeNo = function(cb, result){
     }
 };
 
+// Check Department and Section if Existing
+EmployeeInformationController.prototype.chkDept = function(result, cb){
+    let ACTION = '[chkDept]';
+
+    if (cb == undefined) result = cb;
+
+    let department_id = this.req.body.department.id;
+    let section = this.req.body.department.section;
+
+    let chkDept = employee_information_model.chkDept(department_id);
+    chkDept.then((data)=>{
+        var newData = data;
+        if(newData.length > 0){
+            return cb(null, {
+                message: 'Department is existing.'
+            });
+        }else if(section == newData[0].){
+            
+        }else {
+            return cb(Errors.raise('INVALID_DEPT_ID'));
+        }
+        // if(data.length > 0){
+        //     return cb(null, data[0]);
+        // }else {
+        //     return cb(Errors.raise('INVALID_DEPT_ID'));
+        // }
+    }).catch((error) => {
+        Logger.log('error', TAG + ACTION, error);
+        return cb(Errors.raise('INTERNAL_SERVER_ERROR', error));
+    });
+};
+
 // Add Company Info
 EmployeeInformationController.prototype.addCompanyInfo = function(result, cb) {
     let ACTION = '[addEmployee]';
 
     if (cb == undefined) result = cb;
+
+    if(!this.req.body.name || !this.req.body.company || !this.req.body.employment){
+        return cb(Errors.raise('MISSING_INVALID_PARAMS'));
+    }
     
     let data = {
         employee_no: this.req.body.employeeNo,
@@ -51,15 +88,19 @@ EmployeeInformationController.prototype.addCompanyInfo = function(result, cb) {
         first_name: this.req.body.name.first,
         middle_name: this.req.body.name.middle,
         rank: this.req.body.company.rank,
-        phone_number: this.req.body.company.phoneNumber,
         job_level: this.req.body.company.jobLevel,
-        // // department_code: this.req.body.company.departmentCode,
-        // // section: this.req.body.company.section,
+        position: this.req.body.company.position,
+        phone_number: this.req.body.company.phoneNumber,
+        department_id: this.req.body.department.id,
+        section: this.req.body.department.section,
         status: this.req.body.employment.status || null,
         start_date: this.req.body.employment.startDate || null,
         reg_date: this.req.body.employment.regularizationDate || null,
-        end_date: this.req.body.employment.endDate || null
+        end_date: this.req.body.employment.endDate || null,
+        created_at: Utility.generateDateNow()
     };
+
+    console.log('------', data.created_at);
 
     let newData = [];
 
