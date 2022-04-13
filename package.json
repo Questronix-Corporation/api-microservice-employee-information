@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
-    "async": "^3.0.1",
+    "async": "^3.2.2",
     "cookie-parser": "^1.4.3",
     "cryptr": "^4.0.2",
     "cycle": "^1.0.3",
